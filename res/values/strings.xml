@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartCushion</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="CONTROL_DEVICE">控制设备</string>
+    <string name="POSTURE_LEARNING">坐姿学习</string>
+    <string name="SETTING">设置</string>
+    <string name="ALERT_DATA">报警数据</string>
+    <string name="DEVICE_BATTERY">设备电量</string>
+    <string name="DEVICE_STATUS">设备状态</string>
+    <string name="POSTURE_CHECK">坐姿检测控制</string>
+    <string name="CHECK_PRECISE_COUNTROL">检测精度控制</string>
+    <string name="TEMPERATURE_CONTROL_STATE">温控状态</string>
+    <string name="FAN_SWITCH">风扇开关</string>
+    <string name="NORMAL">标准</string>
+    <string name="HIGHT_LEVEL_1">高一级</string>
+    <string name="HIGHT_LEVEL_2">高二级</string>
+    <string name="LOW_LEVEL_1">低一级</string>
+    <string name="LOW_LEVEL_2">低二级</string>
+    <string name="CANCEL">取消</string>
+    
+    <string name="OK">确定</string>
+    
+    
+    <string name="VEHICLE">车载</string>
+    <string name="MUTE">静音</string>
+    
+    
+    <string name="SWITCH_USER">用户切换</string>
+    <string name="USER_INFO">个人信息</string>
+    <string name="USER_NAME">用户名</string>
+    <string name="USER_SEX">性别</string>
+    <string name="USER_AGE">年龄</string>
+    <string name="USER_STSTURE">身高</string>
+    <string name="USER_WEIGHT">体重</string>
+    
+    <string name="MAN">男</string>
+    <string name="WOMAN">女</string>
+    <string name="USER_STSTURE_UNIT">KG</string>
+    <string name="USER_WEIGHT_UNIT">cm</string>
+    <string name="USER_AGE_UNIT">岁</string>
+    
+	<string name="TEMPERATURE_SETTING">温度设置</string>
+	<string name="TEMPERATURE_AUTO">自动温控</string>
+	<string name="TEMPERATURE_MANUAL">手动控制</string>
+	
+	<string name="main_activity_exit"> 再按一次退出程序</string>
+	
+	<string name="START_USE">开始使用</string>
+	<string name="PLEASE_INPUT_YOUR_USER_NAME">请输入您的用户名</string>
+	<string name="PLEASE_INPUT_YOUR_USER_STSTURE">请输入您的身高</string>
+	<string name="PLEASE_INPUT_YOUR_USER_AGE">请输入您的年龄</string>
+	<string name="PLEASE_INPUT_YOUR_USER_WEIGHT">请输入您的体重</string>
+	<string name="NEXT">下一步</string>
+	<string name="EDIT">编辑</string>
+	<string name="ADD">添加</string>
+	<string name="START_LEARNING">开始学习</string>
+	<string name="app_running">正在运行</string>
+	
+	<string name="unknown_device">未知设备</string>
+	<string name="ble_connect">蓝牙连接</string>
+	<string name="booluth_open">直接打开</string>
+    <string name="booluth_open_tips">打开蓝牙来允许 \"SmartCushion\" 连接到配件</string>
+    <string name="gps_open_tips">请保持GPS为开启状态，否则可能无法搜索到设备。</string>
+	<string name="right_position">正确坐姿</string>
+	<string name="right_position_require">头正、身直、肩平、足安、双手自然下垂放置大腿处。</string>
+	<string name="waiting_for_detection">等待检测&#8230;</string>
+	
+	<string name="alert_count">报警次数</string>
+	<string name="sys_data">正在同步数据</string>
+	
+	<string name="YOU_ARE_NOT_LEGAL_USER">你不是合法用户</string>
+</resources>

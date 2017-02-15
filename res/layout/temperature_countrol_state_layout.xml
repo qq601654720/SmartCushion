@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/main_background">
+    
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style">
+
+        <LinearLayout
+           android:id="@+id/btn_auto_temperature_countrol"
+           style="@style/ListviewItem_style">
+			<LinearLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:orientation="horizontal"
+			    android:gravity="center_vertical"
+			    android:layout_weight="1">
+    
+                <TextView
+                	style="@style/ListviewItem_title_text_style"
+                	android:text="@string/TEMPERATURE_AUTO"/>
+                
+			</LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_user_switch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                />
+            
+             <ImageView
+                 android:id="@+id/switch_auto_temperature_countrol"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/checkmark_normal"
+                 android:layout_marginStart="5dp" />
+
+        </LinearLayout>
+        <View            
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="@color/listview_item_serif"/>
+        <LinearLayout
+            	android:id="@+id/btn_manual_temperature_countrol"
+            	style="@style/ListviewItem_style" >
+             
+            <LinearLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:orientation="horizontal"
+			    android:gravity="center"
+			    android:layout_weight="1">
+    
+            <TextView
+                style="@style/ListviewItem_title_text_style"
+               	android:layout_weight="2"
+                android:text="@string/TEMPERATURE_MANUAL"/>
+                
+			</LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_temperature_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="30"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="℃"
+                />
+            
+             <ImageView
+                android:id="@+id/switch_manual_temperature_countrol"
+           		android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/checkmark" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

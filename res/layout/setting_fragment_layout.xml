@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/main_background">
+    
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style">
+
+        <LinearLayout
+           android:id="@+id/btn_user_switch"
+           style="@style/ListviewItem_style">
+			<LinearLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:orientation="horizontal"
+			    android:gravity="center_vertical"
+			    android:layout_weight="1">
+
+				<ImageView
+				    android:id="@+id/imageView1"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:src="@drawable/ic_user" />
+    
+                <TextView
+                	style="@style/ListviewItem_title_text_style"
+
+                	android:text="@string/SWITCH_USER"
+               		android:layout_marginStart="18dp"/>
+                
+			</LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_user_switch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                />
+            
+             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/disclosure_arrow" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style" >
+
+        <LinearLayout
+            android:id="@+id/btn_user_user_info"
+            style="@style/ListviewItem_style" >
+             
+            	<LinearLayout 
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="match_parent"
+			    	android:orientation="horizontal"
+			    	android:gravity="center"
+			    	android:layout_weight="1">
+
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:src="@drawable/ic_info" />
+    
+            	<TextView
+                	style="@style/ListviewItem_title_text_style"
+               	 	android:layout_weight="2"
+                	android:text="@string/USER_INFO"
+                	android:layout_marginStart="18dp"/>
+                
+			</LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_user_user_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                />
+            
+             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/disclosure_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

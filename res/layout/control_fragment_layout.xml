@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/control_framant_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/main_background">
+
+    <com.ab.view.sliding.AbSlidingPlayView
+        android:id="@+id/mAbSlidingPlayView"
+        android:layout_width="fill_parent"
+        android:layout_height="150dip" >
+    </com.ab.view.sliding.AbSlidingPlayView>
+        <ScrollView
+        android:id="@+id/expanded_menu"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+        
+        <LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:orientation="vertical" >
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style">
+
+        <LinearLayout
+           style="@style/ListviewItem_style">
+
+            <TextView
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/DEVICE_BATTERY"/>
+
+            <TextView
+                android:id="@+id/tv_device_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+			<View            
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="@color/listview_item_serif"/>
+        <LinearLayout
+           android:id="@+id/btn_device_state"
+           style="@style/ListviewItem_style" >
+
+           <TextView
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/DEVICE_STATUS"
+               />
+
+            <TextView
+                android:id="@+id/tv_device_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+               />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/disclosure_arrow"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style" >
+
+        <LinearLayout
+            style="@style/ListviewItem_style" >
+            <TextView
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/POSTURE_CHECK"/>
+
+            <CheckBox
+                android:id="@+id/switch_device_posture_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/switch_btn_selecter"
+                />
+
+        </LinearLayout>        
+		<View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="@color/listview_item_serif"/>
+
+        <LinearLayout
+            android:id="@+id/btn_check_precise_countrol"
+            style="@style/ListviewItem_style">
+            <TextView               
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/CHECK_PRECISE_COUNTROL"/>
+
+            <TextView
+                android:id="@+id/tv_check_precise_countrol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/disclosure_arrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ListviewItem_chunk_style">
+        <LinearLayout
+            android:id="@+id/btn_temperature_countrol_state"
+            style="@style/ListviewItem_style">
+            <TextView
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/TEMPERATURE_CONTROL_STATE"/>
+
+            <TextView
+                android:id="@+id/tv_temperature_countrol_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"/>
+            
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/disclosure_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+    
+        <LinearLayout
+        style="@style/ListviewItem_chunk_style">
+        <LinearLayout
+            android:id="@+id/btn_fan_switch"
+            style="@style/ListviewItem_style">
+            <TextView
+                style="@style/ListviewItem_title_text_style"
+                android:layout_weight="2"
+                android:text="@string/FAN_SWITCH"/>
+
+            <TextView
+                android:id="@+id/tv_fan_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"/>
+            
+            <CheckBox
+                android:id="@+id/switch_fan_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/switch_btn_selecter"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:gravity="center"
+       	android:background="@drawable/corner"
+       	>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TEMPERATURE_SETTING"
+            style="@style/dialogTextTitle"
+            android:gravity="center"
+            android:layout_marginTop="15dp"/>
+        <LinearLayout
+        	android:layout_width="match_parent"
+       	 	android:layout_height="wrap_content" 
+			android:layout_marginTop="20dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+			<TextView
+            	android:id="@+id/tv_temperature"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:text="25℃"            
+            	style="@style/dialogTextValue"
+            	android:gravity="center"
+            />
+		</LinearLayout>
+
+        
+        <LinearLayout
+        	android:layout_width="match_parent"
+       	 	android:layout_height="wrap_content" 
+			android:layout_marginTop="18dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20" 
+            style="@style/seekbar_min_max_value"
+            android:layout_marginStart="@dimen/listview_item_margion_left"/>
+
+        <SeekBar
+            android:id="@+id/seekbar_temperature"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="1dp"  
+       		android:minHeight="1dp"
+            android:progressDrawable="@drawable/po_seekbar"
+            android:thumb="@drawable/slider_button"
+            android:progress="5"
+            android:max="25"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45" 
+            style="@style/seekbar_min_max_value"
+            android:layout_marginEnd="@dimen/listview_item_margion_right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_dialog_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/dialogCancleButton"
+            android:background="@drawable/button_selector_cancle"
+            android:text="@string/CANCEL"/>
+
+        <Button
+            android:id="@+id/btn_dialog_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/dialogOkButton"
+            android:background="@drawable/button_selector_confirm"
+            android:text="@string/OK"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    
+
+</LinearLayout>

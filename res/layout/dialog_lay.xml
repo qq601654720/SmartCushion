@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/corner"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/title_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/listview_item_margion_top"
+        android:layout_marginLeft="@dimen/listview_item_margion_left"
+        android:layout_marginRight="@dimen/listview_item_margion_right"
+        android:text=""
+        android:textColor="@color/listview_item_text_title_color"
+        android:gravity="center"
+        android:textSize="@dimen/listview_item_text_size"
+         />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_dialog"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/listview_item_margion_top" >
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/dialogCancleButton"
+            android:background="@drawable/button_selector_cancle"
+            android:text="@string/CANCEL"/>
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/dialogOkButton"
+            android:background="@drawable/button_selector_confirm"
+            android:text="@string/OK"/>
+       
+    </LinearLayout>
+
+</RelativeLayout>

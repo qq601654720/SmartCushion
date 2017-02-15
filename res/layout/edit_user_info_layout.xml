@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/sign_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo1028" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/listview_item_margion_right"
+        android:layout_marginStart="@dimen/listview_item_margion_left"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/edit_user_title_style"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/USER_NAME" />
+
+            <EditText
+                android:id="@+id/editText_user_name"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:hint="@string/PLEASE_INPUT_YOUR_USER_NAME" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#9f885e" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/edit_user_title_style"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/USER_SEX" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupSex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_man"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/MAN"
+                    android:textColor="#725020" 
+                    android:button="@drawable/redio_button_selecter"/>
+
+                <RadioButton
+                    android:id="@+id/radio_women"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/WOMAN"
+                    android:textColor="#725020" 
+                    android:button="@drawable/redio_button_selecter"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#9f885e" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/edit_user_title_style"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/USER_AGE" />
+
+            <EditText
+                android:id="@+id/editText_user_age"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/PLEASE_INPUT_YOUR_USER_AGE" 
+                android:singleLine="true"
+                android:maxLength="2">
+                
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#9f885e" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/edit_user_title_style"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/USER_STSTURE" />
+
+            <EditText
+                android:id="@+id/editText_user_ststure"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/PLEASE_INPUT_YOUR_USER_STSTURE" 
+                android:maxLength="3">
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#9f885e" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                style="@style/edit_user_title_style"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="@string/USER_WEIGHT" />
+
+            <EditText
+                android:id="@+id/editText_user_weight"
+                style="@style/editText_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/PLEASE_INPUT_YOUR_USER_WEIGHT" 
+                android:maxLength="3">
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1px"
+            android:background="#9f885e" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/listview_item_margion_right"
+        android:layout_marginStart="@dimen/listview_item_margion_left"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_corner_selecter"
+        android:text="@string/NEXT" 
+        android:textColor="@color/guide_button_text_color"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>

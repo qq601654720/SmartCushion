@@ -1,0 +1,121 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="ListviewItem_style">
+        <item name="android:layout_height">@dimen/listview_item_hight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>      
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+   <style name="ListviewItem_chunk_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/listview_item_margion_top</item>       
+        <item name="android:background">@color/listview_item_background</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart" >@dimen/listview_item_margion_left</item>
+        <item name="android:paddingEnd">@dimen/listview_item_margion_right</item>
+    </style>
+    
+   
+      <style name="ListviewItem_title_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/listview_item_text_title_color</item>
+    </style>
+    
+    <style name="ListviewItem_value_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/listview_item_text_value_color</item>
+
+   	</style>
+   	
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    
+    <style name="popTextNormal" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_normal_color</item>
+    </style>
+    
+    <style name="popTextCancel" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_cancel_color</item>
+    </style>
+    
+    
+   <style name="popTextMiddle" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_middle_color</item>
+    </style>
+    
+    <style name="dialogTextTitle" >
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/pop_middle_color</item>
+    </style>
+    
+   	<style name="dialogTextValue" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_normal_color</item>
+    </style>
+    
+   	<style name="dialogCancleButton" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_cancel_color</item>
+    </style>
+    
+   	<style name="dialogOkButton" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/pop_normal_color</item>
+    </style>
+    
+   	   	<style name="seekbar_min_max_value" >
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/seekbar_min_max_value_color</item>
+    </style>
+    
+   	   	<style name="Dialog" parent="android:style/Theme.Dialog">  
+        <item name="android:background">#00000000</item>  
+        <item name="android:windowBackground">@android:color/transparent</item>  
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowIsFloating">true</item>  
+    </style>
+    
+   <style name="edit_user_title_style" >
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/edit_user_title_color</item>
+    </style>
+    
+    <style name="editText_style" >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/edit_user_input_info_color</item>
+        <item name="android:textColorHint">@color/edit_user_input_hint_color</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+   	   	
+   	   	
+   	
+   	
+
+</resources>

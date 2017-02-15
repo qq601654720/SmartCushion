@@ -1,0 +1,55 @@
+# view res/layout/guide_activity.xml #generated:6
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/setting_device_manger_layout.xml #generated:2
+-keep class com.ab.view.pullview.AbPullToRefreshView { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:7
+-keep class com.ab.view.sliding.AbBottomTabView { <init>(...); }
+
+# view res/layout/control_fragment_layout.xml #generated:9
+-keep class com.ab.view.sliding.AbSlidingPlayView { <init>(...); }
+
+# view res/layout/chart_fragment.xml #generated:37
+-keep class com.github.mikephil.charting.charts.LineChart { <init>(...); }
+
+# view AndroidManifest.xml #generated:32
+-keep class com.leixun.smartcushion.CushionBeanApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class com.leixun.smartcushion.Guide.GuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:61
+-keep class com.leixun.smartcushion.LauncherActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.leixun.smartcushion.LearningActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.leixun.smartcushion.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class com.leixun.smartcushion.Sdk.Ble.BluetoothLeService { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.leixun.smartcushion.control.TemperatureCountrolStateActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.leixun.smartcushion.setting.DeviceListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:49
+-keep class com.leixun.smartcushion.setting.EditUserNameActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.leixun.smartcushion.setting.StartLearningActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:44
+-keep class com.leixun.smartcushion.setting.UserInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:67
+-keep class com.leixun.smartcushion.setting.UserListActivity { <init>(...); }
+
+# view res/layout/setting_device_manger_layout.xml #generated:24
+# view res/layout/user_list_layout.xml #generated:24
+-keep class com.leixun.smartcushion.view.InvalidListView { <init>(...); }
+

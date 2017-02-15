@@ -1,0 +1,23 @@
+<resources>
+
+    <dimen name="listview_item_hight">50dp</dimen>
+    <dimen name="listview_item_margion_right">15dp</dimen>
+    <dimen name="listview_item_margion_left">15dp</dimen>
+	<dimen name="listview_item_margion_top">15dp</dimen>
+	<dimen name="listview_item_text_size">17sp</dimen>
+    <!-- 启动界面 -->
+    <dimen name="app_name_txt_margintop">16dp</dimen>
+    <dimen name="app_name_textsize">20sp</dimen>
+    <dimen name="launch_image_width">84dp</dimen>
+    <dimen name="launch_image_hight">84dp</dimen>
+    <dimen name="launch_image_margintop">196dp</dimen>
+    <dimen name="guide_dot_image_pading">15.0dip</dimen>
+    <dimen name="guide_dot_image_marginbottom">24.0dp</dimen>
+    <dimen name="guide_start_image_marginbottom">60dp</dimen>
+    <dimen name="launch_image_txt1_size">30sp</dimen>
+    <dimen name="launch_image_txt2_size">13sp</dimen>
+    <dimen name="launch_image_martop_txt1">18dp</dimen>
+    <dimen name="launch_image_martop_txt2">10dp</dimen>
+    <dimen name="launch_image_martop">120dp</dimen>
+    
+</resources>
