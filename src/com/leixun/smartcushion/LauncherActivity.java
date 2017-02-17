@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.telephony.TelephonyManager;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -26,8 +25,6 @@ import com.leixun.smartcushion.Sdk.perference.CushionPreferences;
 import com.leixun.smartcushion.Sdk.perference.XMLPreferences;
 import com.leixun.smartcushion.Sdk.util.L;
 import com.leixun.smartcushion.setting.DeviceListActivity;
-import com.leixun.smartcushion.view.CustomDialog;
-import com.leixun.smartcushion.view.CustomDialog.Builder;
 
 public class LauncherActivity extends Activity {
 
@@ -36,8 +33,10 @@ public class LauncherActivity extends Activity {
 	private Animation mFadeInScale;
 	private BluetoothAdapter mBluetoothAdapter;
 	private Handler mHandler;
-//	private List<DeviceInfoBean> mDeviceInfoBeans = new LinkedList<DeviceInfoBean>();
+	// private List<DeviceInfoBean> mDeviceInfoBeans = new
+	// LinkedList<DeviceInfoBean>();
 	private List<String> imeis = new LinkedList<String>();
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,10 +47,10 @@ public class LauncherActivity extends Activity {
 		initBle();
 		setListener();
 		String id = CushionPreferences.getInstance(this).getCurrectUser(null);
-//		List<UserBean> beans = DbManger.getInstance(mContext).queryData("0");
-		//		if(beans.size()>0){
-//			setmCurrectUserBean(beans.get(0));
-//		}
+		// List<UserBean> beans = DbManger.getInstance(mContext).queryData("0");
+		// if(beans.size()>0){
+		// setmCurrectUserBean(beans.get(0));
+		// }
 
 	}
 
@@ -59,25 +58,26 @@ public class LauncherActivity extends Activity {
 		mHandler = new Handler();
 		final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
-			// Checks if Bluetooth is supported on the device.
+		// Checks if Bluetooth is supported on the device.
 		if (mBluetoothAdapter == null) {
 			finish();
 		}
-		
-		if(DbManger.getInstance(this).queryDbUserInfoData().size()>0){
-			CushionBeanManager.getInstance().setBeans(DbManger.getInstance(this).queryDbUserInfoData());
-		}
-		
-		String userID = CushionPreferences.getInstance(this).getCurrectUser(null);
-		
-		if(userID!=null){
-			
-			L.e("userID================================="+userID);
-			List<UserBean>  bean = DbManger.getInstance(this).queryData(userID);
-			L.e("beans=====================size-============="+bean.size());
 
-			if(bean.size()>0){
-			CushionBeanManager.getInstance().setmCurrectUserBean(bean.get(0));
+		if (DbManger.getInstance(this).queryDbUserInfoData().size() > 0) {
+			CushionBeanManager.getInstance().setBeans(
+					DbManger.getInstance(this).queryDbUserInfoData());
+		}
+
+		String userID = CushionPreferences.getInstance(this).getCurrectUser(
+				null);
+
+		if (userID != null) {
+
+			List<UserBean> bean = DbManger.getInstance(this).queryData(userID);
+
+			if (bean.size() > 0) {
+				CushionBeanManager.getInstance().setmCurrectUserBean(
+						bean.get(0));
 			}
 		}
 		// TODO Auto-generated method stub
@@ -126,21 +126,19 @@ public class LauncherActivity extends Activity {
 			intent.setClass(LauncherActivity.this, GuideActivity.class);
 			XMLPreferences.getInstance(this).setIsFirstStartApplication(false);
 		} else {
-			String preaddress = CushionPreferences.getInstance(
-					this).getCurrectConnectorCushion(
-						null);
-			if (preaddress==null){
-				intent.setClass(LauncherActivity.this,
-						DeviceListActivity.class);
+			String preaddress = CushionPreferences.getInstance(this)
+					.getCurrectConnectorCushion(null);
+			if (preaddress == null) {
+				intent.setClass(LauncherActivity.this, DeviceListActivity.class);
 				intent.putExtra("FIRST_TIME_START", true);
-			}else {
+			} else {
 				intent.setClass(LauncherActivity.this, MainActivity.class);
 				intent.putExtra("FIRST_TIME_START", false);
 
 			}
 
 		}
-//		CheckImei();
+		// CheckImei();
 		startActivity(intent);
 		this.finish();
 
@@ -168,22 +166,21 @@ public class LauncherActivity extends Activity {
 		super.onResume();
 
 	}
-	
-//	/**
-//	 * 
-//	 */
-//	private void CheckImei() {
-//		// TODO Auto-generated method stub
-//		imeis.add("860076031428492");
-//		String Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
-//				.getDeviceId();
-//		if(!imeis.contains(Imei)){
-//			CustomDialog.Builder builder = new Builder(this);
-//			builder.setMessage(R.string.YOU_ARE_NOT_LEGAL_USER);
-//			CustomDialog customDialog = builder.customCreate();
-//			customDialog.show();
-//		}
-//	}
-	
+
+	// /**
+	// *
+	// */
+	// private void CheckImei() {
+	// // TODO Auto-generated method stub
+	// imeis.add("860076031428492");
+	// String Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
+	// .getDeviceId();
+	// if(!imeis.contains(Imei)){
+	// CustomDialog.Builder builder = new Builder(this);
+	// builder.setMessage(R.string.YOU_ARE_NOT_LEGAL_USER);
+	// CustomDialog customDialog = builder.customCreate();
+	// customDialog.show();
+	// }
+	// }
 
 }

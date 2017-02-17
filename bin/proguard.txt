@@ -16,37 +16,40 @@
 # view AndroidManifest.xml #generated:32
 -keep class com.leixun.smartcushion.CushionBeanApplication { <init>(...); }
 
-# view AndroidManifest.xml #generated:46
+# view AndroidManifest.xml #generated:48
 -keep class com.leixun.smartcushion.Guide.GuideActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:61
+# view AndroidManifest.xml #generated:70
 -keep class com.leixun.smartcushion.LauncherActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:60
+# view AndroidManifest.xml #generated:68
 -keep class com.leixun.smartcushion.LearningActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:38
+# view AndroidManifest.xml #generated:39
 -keep class com.leixun.smartcushion.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:52
+# view AndroidManifest.xml #generated:59
 -keep class com.leixun.smartcushion.Sdk.Ble.BluetoothLeService { <init>(...); }
 
-# view AndroidManifest.xml #generated:45
+# view AndroidManifest.xml #generated:79
+-keep class com.leixun.smartcushion.TestActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
 -keep class com.leixun.smartcushion.control.TemperatureCountrolStateActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:51
+# view AndroidManifest.xml #generated:56
 -keep class com.leixun.smartcushion.setting.DeviceListActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:49
+# view AndroidManifest.xml #generated:52
 -keep class com.leixun.smartcushion.setting.EditUserNameActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:50
+# view AndroidManifest.xml #generated:54
 -keep class com.leixun.smartcushion.setting.StartLearningActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:44
 -keep class com.leixun.smartcushion.setting.UserInfoActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:67
+# view AndroidManifest.xml #generated:77
 -keep class com.leixun.smartcushion.setting.UserListActivity { <init>(...); }
 
 # view res/layout/setting_device_manger_layout.xml #generated:24

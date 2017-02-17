@@ -152,7 +152,7 @@ public class ControlFragment extends AbFragment implements OnClickListener{
 	private void updateCushionBattery(CushionBean cushion) {
 		// TODO Auto-generated method stub
 		if(cushion!=null)
-		mTvDevicebattery.setText(cushion.getBattery()*20);
+		mTvDevicebattery.setText(cushion.getBattery()*20+"");
 	}
 	
 	/**

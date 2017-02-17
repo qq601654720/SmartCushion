@@ -3,7 +3,8 @@ package com.leixun.smartcushion.Sdk.Db;
 import android.content.Context;
 
 import com.ab.db.orm.AbDBHelper;
-import com.leixun.smartcushion.Sdk.bean.CushionBean;
+import com.leixun.smartcushion.Sdk.Db.Dao.ErrDataBeanDao;
+import com.leixun.smartcushion.Sdk.bean.ErrDataBean;
 import com.leixun.smartcushion.Sdk.bean.UserBean;
 /**
  * © 2016 amsoft.cn
@@ -18,9 +19,9 @@ public class DBInsideHelper extends AbDBHelper {
 	private static final String DBNAME = "cushion.db";
     
     // 当前数据库的版本
-	private static final int DBVERSION = 1;
+	private static final int DBVERSION = 2;
 	// 要初始化的表
-	private static final Class<?>[] clazz = {UserBean.class};
+	private static final Class<?>[] clazz = {UserBean.class,ErrDataBean.class};
 	public DBInsideHelper(Context context) {
 		super(context, DBNAME, null, DBVERSION, clazz);
 	}

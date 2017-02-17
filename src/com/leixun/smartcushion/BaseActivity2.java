@@ -469,7 +469,7 @@ public class BaseActivity2 extends AbActivity implements DeviceChangeListener,Bt
 	public void UpdateHistoryDataInfo(ErrDataBean errDataBean, int tootleCount,int currectCount) {
 		// TODO Auto-generated method stub
 		CushionBeanManager.getInstance().addErrDatas(tootleCount, currectCount, errDataBean);
-		if(tootleCount==currectCount){			
+		if(tootleCount==(currectCount+1)){			
 			mHandler.sendEmptyMessage(HIDE_ERR_DATA_DIALOG);
 		}
 				

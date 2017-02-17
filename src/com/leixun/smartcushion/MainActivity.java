@@ -1,6 +1,7 @@
 package com.leixun.smartcushion;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import android.app.Fragment;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.ab.view.sliding.AbBottomTabView;
 import com.ab.view.titlebar.AbTitleBar;
 import com.leixun.smartcushion.Sdk.BleConnector;
+import com.leixun.smartcushion.Sdk.Db.DbManger;
 import com.leixun.smartcushion.Sdk.bean.Alarm;
 import com.leixun.smartcushion.Sdk.bean.ErrDataBean;
 import com.leixun.smartcushion.Sdk.perference.CushionPreferences;
@@ -35,6 +38,7 @@ public class MainActivity extends BaseActivity implements OnPageChangeListener {
 	private long mExitTime;
 	private final int REFRESH_SETTING = 0;
 	private final int REFRESH_ERRDATA= 1;
+
 	Handler mhHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -230,10 +234,15 @@ public class MainActivity extends BaseActivity implements OnPageChangeListener {
 			int currectCount) {
 		// TODO Auto-generated method stub
 		super.UpdateHistoryDataInfo(errDataBean, tootleCount, currectCount);
-		if(tootleCount==currectCount){			
+		DbManger.getInstance(this).saveDbErrData(errDataBean);
+		if(tootleCount==(currectCount+1)){			
 			Message message = new Message();
 			message.what = REFRESH_ERRDATA;
 			mhHandler.sendMessage(message);
 		}
+		Log.e("历史数据数量=======", DbManger.getInstance(this).queryErrDataCount()+"");
 	}
+	
+	
+
 }

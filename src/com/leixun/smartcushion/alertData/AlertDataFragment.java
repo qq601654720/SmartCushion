@@ -2,6 +2,7 @@ package com.leixun.smartcushion.alertData;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.leixun.smartcushion.R;
 import com.leixun.smartcushion.Sdk.CushionBeanManager;
+import com.leixun.smartcushion.Sdk.Db.DbManger;
 import com.leixun.smartcushion.Sdk.bean.ErrDataBean;
 
 public class AlertDataFragment extends AbFragment
@@ -37,13 +40,12 @@ public class AlertDataFragment extends AbFragment
 	public LineChart lineChart ;
 	public ArrayList<String> x = new ArrayList<String>();
 	public ArrayList<String> time_x = new ArrayList<String>();
-	public ArrayList<Entry> y_pm25 = new ArrayList<Entry>();
-	public ArrayList<ILineDataSet> linePm25DataSets = new ArrayList<ILineDataSet>();
+	public ArrayList<Entry> y_Err = new ArrayList<Entry>();
+	public ArrayList<ILineDataSet> lineErrDataSets = new ArrayList<ILineDataSet>();
 	
-	public LineData linePM25Data = null;
+	public LineData lineErrData = null;
 	private List<ErrDataBean> mhistoryDatas = new LinkedList<ErrDataBean>();
 	private boolean beforeDay = false;
-
 	@Override
 	public View onCreateContentView(LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
@@ -79,7 +81,7 @@ public class AlertDataFragment extends AbFragment
 	private void initData() {
 		// TODO Auto-generated method stub
 		initChart();
-		initPm25LineChar();
+		initErrLineChar();
 
 
 	}
@@ -95,9 +97,9 @@ public class AlertDataFragment extends AbFragment
 		super.onResume();
 	}
 
-	private void initPm25LineChar() {
+	private void initErrLineChar() {
 		// TODO Auto-generated method stub
-		LineDataSet lineDataSet = new LineDataSet(y_pm25, "");// y轴数据集合
+		LineDataSet lineDataSet = new LineDataSet(y_Err, "");// y轴数据集合
 		// lineDataSet.set
 		lineDataSet.setLineWidth(1f);// 线宽
 		lineDataSet.setCircleSize(6f);// 现实圆形大小
@@ -112,9 +114,9 @@ public class AlertDataFragment extends AbFragment
 				R.color.line_chart_text_color));
 		lineDataSet.setValueTextSize(8f);
 		lineDataSet.setValueTypeface(Typeface.DEFAULT_BOLD);
-		linePm25DataSets.clear();
-		linePm25DataSets.add(lineDataSet);
-		linePM25Data = new LineData(x, linePm25DataSets);
+		lineErrDataSets.clear();
+		lineErrDataSets.add(lineDataSet);
+		lineErrData = new LineData(x, lineErrDataSets);
 	}
 
 	
@@ -130,8 +132,8 @@ public class AlertDataFragment extends AbFragment
 			lineChart.setDrawGridBackground(true);// 是否显示表格颜色
 			lineChart.setBackgroundColor(Color.TRANSPARENT);// 背景颜色
 			lineChart.setGridBackgroundColor(getResources().getColor(R.color.alert_background));
-			lineChart.setDoubleTapToZoomEnabled(false);
-			lineChart.setTouchEnabled(false);
+			lineChart.setDoubleTapToZoomEnabled(true);
+			lineChart.setTouchEnabled(true);
 			lineChart.setDrawMarkerViews(false);
 
 //			lineChart.animateX(750);
@@ -146,7 +148,7 @@ public class AlertDataFragment extends AbFragment
 			YAxis leftAxis = lineChart.getAxisLeft();
 			XAxis xAxis = lineChart.getXAxis();
 			xAxis.setDrawGridLines(false);
-			xAxis.setTextSize(12);
+			xAxis.setTextSize(8);
 			xAxis.setXOffset(0f);
 			leftAxis.setEnabled(false);
 			xAxis.setDrawAxisLine(true);
@@ -175,12 +177,12 @@ public class AlertDataFragment extends AbFragment
 	/**
 	 * 
 	 */
-	private void updatePm25Data(List<ErrDataBean> historyDatas) {
+	private void updateErrData(List<ErrDataBean> historyDatas) {
 		// TODO Auto-generated method stub
-		for(int i = 0;i<mhistoryDatas.size();i++){
-			x.add(historyDatas.get(i).getErrTime());
-			time_x.add(historyDatas.get(i).getErrTime());				
-			y_pm25.add(new Entry(historyDatas.get(i).getErrCount(), i));
+		for(int i = 0;i<time_x.size();i++){
+//			x.add(historyDatas.get(i).getErrTime());
+//			time_x.add(historyDatas.get(i).getErrTime());				
+			y_Err.add(new Entry(historyDatas.get(i).getErrCount(), i));
 		}
 	
 	}
@@ -192,7 +194,7 @@ public class AlertDataFragment extends AbFragment
 	private void updataCharData() {
 		// TODO Auto-generated method stub
 		initData();
-		lineChart.setData(linePM25Data);
+		lineChart.setData(lineErrData);
 
 	}
 
@@ -201,54 +203,54 @@ public class AlertDataFragment extends AbFragment
 	 */
 	public void UpdateHistory(List<ErrDataBean> historyDatas) {
 		// TODO Auto-generated method stub
-		updatePm25Data(historyDatas);
+		updateErrData(historyDatas);
 		mHandler.sendEmptyMessage(1);
 	}
 	
-//	/**
-//	 * 
-//	 */
-//	private void testData() {
-//		// TODO Auto-generated method stub
-//		String date1 = new java.text.SimpleDateFormat("HH:mm").format(new java.util.Date(1483692810 * 1000));
-//		ErrDataBean errDataBean1 = new ErrDataBean();
-//		errDataBean1.setErrTime(date1);
-//		errDataBean1.setErrCount(10);
-//		String date2 = new java.text.SimpleDateFormat("HH:mm").format(new java.util.Date(1483693810 * 1000));
-//
-//		ErrDataBean errDataBean2 = new ErrDataBean();
-//		errDataBean2.setErrTime(date2);
-//		errDataBean2.setErrCount(20);
-//		String date3 = new java.text.SimpleDateFormat("HH:mm").format(new java.util.Date(1483694810 * 1000));
-//
-//		ErrDataBean errDataBean3 = new ErrDataBean();
-//		errDataBean3.setErrTime(date3);
-//		errDataBean3.setErrCount(11);
-//		String date4 = new java.text.SimpleDateFormat("HH:mm").format(new java.util.Date(1483695810 * 1000));
-//
-//		ErrDataBean errDataBean4 = new ErrDataBean();
-//		errDataBean4.setErrTime(date4);
-//		errDataBean4.setErrCount(13);
-//		String date5 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483696810 * 1000));
-//
-//		ErrDataBean errDataBean5 = new ErrDataBean();
-//		errDataBean5.setErrTime(date5);
-//		errDataBean5.setErrCount(9);
-//		
-//		String date6 = new java.text.SimpleDateFormat("HH:mm").format(new java.util.Date(1483697810 * 1000));
-//		ErrDataBean errDataBean6 = new ErrDataBean();
-//		errDataBean6.setErrTime(date6);
-//		errDataBean6.setErrCount(6);
-//		
-//		mhistoryDatas.add(errDataBean1);
-//		mhistoryDatas.add(errDataBean2);
-//		mhistoryDatas.add(errDataBean3);
-//		mhistoryDatas.add(errDataBean4);
-//		mhistoryDatas.add(errDataBean5);
-//		mhistoryDatas.add(errDataBean6);
-//		
-//		UpdateHistory(mhistoryDatas);
-//	}
+	/**
+	 * 
+	 */
+	private void testData() {
+		// TODO Auto-generated method stub
+		String date1 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483692810 * 1000));
+		ErrDataBean errDataBean1 = new ErrDataBean();
+		errDataBean1.setErrTime(date1);
+		errDataBean1.setErrCount(10);
+		String date2 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483693810 * 1000));
+
+		ErrDataBean errDataBean2 = new ErrDataBean();
+		errDataBean2.setErrTime(date2);
+		errDataBean2.setErrCount(20);
+		String date3 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483694810 * 1000));
+
+		ErrDataBean errDataBean3 = new ErrDataBean();
+		errDataBean3.setErrTime(date3);
+		errDataBean3.setErrCount(11);
+		String date4 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483695843 * 1000));
+
+		ErrDataBean errDataBean4 = new ErrDataBean();
+		errDataBean4.setErrTime(date4);
+		errDataBean4.setErrCount(13);
+		String date5 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483696835 * 1000));
+
+		ErrDataBean errDataBean5 = new ErrDataBean();
+		errDataBean5.setErrTime(date5);
+		errDataBean5.setErrCount(9);
+		
+		String date6 = new SimpleDateFormat("HH:mm").format(new java.util.Date(1483697832 * 1000));
+		ErrDataBean errDataBean6 = new ErrDataBean();
+		errDataBean6.setErrTime(date6);
+		errDataBean6.setErrCount(6);
+		
+		mhistoryDatas.add(errDataBean1);
+		mhistoryDatas.add(errDataBean2);
+		mhistoryDatas.add(errDataBean3);
+		mhistoryDatas.add(errDataBean4);
+		mhistoryDatas.add(errDataBean5);
+		mhistoryDatas.add(errDataBean6);
+		
+		UpdateHistory(mhistoryDatas);
+	}
 	
 	
 	/**
@@ -256,10 +258,64 @@ public class AlertDataFragment extends AbFragment
 	 */
 	public void RefreshErrDataList() {
 		// TODO Auto-generated method stub
-		mhistoryDatas = CushionBeanManager.getInstance().getErrDatas();
+		updateTime();
+//		testData();
+		mhistoryDatas = DbManger.getInstance(getActivity()).queryErrDataAll();
 		UpdateHistory(mhistoryDatas);
-		
+		Log.e("ssssssssssssssssssssssssss========", mhistoryDatas.size()+"");
 	}
 	
-	
+
+	/**
+	 * 
+	 */
+	private void updateTime() {
+		// TODO Auto-generated method stub
+		x.clear();
+		time_x.clear();
+		beforeDay = false;
+		Calendar c = Calendar.getInstance();
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		int year = c.get(Calendar.YEAR);
+		int month = c.get(Calendar.MONTH);
+		int day = c.get(Calendar.DATE);
+		for (int i = 11; i >= 0; i--) {
+			day = c.get(Calendar.DATE);
+			if (hour - 2 * i > 0 || hour - 2 * i == 0) {
+				if (beforeDay) {
+					beforeDay = false;
+					c.set(Calendar.DATE, day + 1);
+
+					day = c.get(Calendar.DATE);
+				}
+				hour = c.get(Calendar.HOUR_OF_DAY);
+				year = c.get(Calendar.YEAR);
+				month = c.get(Calendar.MONTH);
+				day = c.get(Calendar.DATE);
+				if(hour - 2 * i < 10){
+					x.add("0"+ (hour - 2 * i)  + ":00");
+				}else{
+					x.add(hour - 2 * i + ":00");
+				}
+				time_x.add((year - 2000) + "" + (month + 1) + "" + day + ""
+						+ (hour - 2 * i) + "");
+			} else if (hour - 2 * i < 0) {
+				day = c.get(Calendar.DATE);
+				if (!beforeDay) {
+					beforeDay = true;
+					c.set(Calendar.DATE, day - 1);
+					day = c.get(Calendar.DATE);
+				}
+				hour = c.get(Calendar.HOUR_OF_DAY);
+				year = c.get(Calendar.YEAR);
+				month = c.get(Calendar.MONTH);
+				day = c.get(Calendar.DATE);
+
+				x.add(String.valueOf(hour - 2 * i + 24) + ":00");
+				time_x.add((year - 2000) + "" + (month + 1) + "" + day + ""
+						+ (hour - 2 * i + 24) + "");
+
+			}
+		}
+	}
 }

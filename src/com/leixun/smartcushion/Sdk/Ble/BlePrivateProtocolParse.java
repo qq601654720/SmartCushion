@@ -113,7 +113,7 @@ public class BlePrivateProtocolParse {
 	public static void ParseErrHistoryData(byte[] data) {
 		L.e("报警历史数据");
 		int tootle = DataTypeUtils.bytesToInt(data, 5, 1);
-		int currect = DataTypeUtils.bytesToInt(data, 5, 1);
+		int currect = DataTypeUtils.bytesToInt(data, 6, 1);
 		ErrDataBean errdata = new ErrDataBean();
 		errdata.setErrTime(new SimpleDateFormat("HH:mm").format(DataTypeUtils.bytesToLong2(data, 7, 4)));
 		errdata.setErrCount(DataTypeUtils.bytesToInt(data, 11,1));
